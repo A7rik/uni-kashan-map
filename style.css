@@ -1,0 +1,320 @@
+@import url(//fonts.googleapis.com/earlyaccess/notonaskharabicui.css);
+:root {
+  --main-back-color: #fff;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Noto Naskh Arabic UI", serif;
+}
+
+a,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+ol,
+p,
+textarea,
+th,
+ul {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  list-style: none;
+  margin: 0;
+  outline: 0;
+  overflow: visible;
+  padding: 0;
+  vertical-align: baseline;
+}
+/*main panel zoom style*/
+.zoom_outer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+#zoom {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  cursor: grab;
+  transform-origin: 0px 0px;
+  transform: scale(1) translate(0px, 0px);
+  transition: transform 0.1s ease;
+}
+
+#zoom svg {
+  width: 100%;
+  height: 100%;
+}
+.rooms {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s;
+}
+/*right panel*/
+.infoOverlayContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  text-align: right;
+  overflow: visible;
+  position: absolute;
+  height: 100%;
+}
+#infoOverlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 23em;
+  max-width: 100%;
+  height: 100%;
+  background-color: var(--main-back-color);
+  transition: right 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#infoContent {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+/*right panel picture*/
+.placePicContainer {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+  flex: none;
+  position: relative;
+}
+.placePic {
+  display: block;
+  width: 100%;
+  height: 15em;
+}
+.placePicButton {
+  opacity: 1;
+  -webkit-filter: saturate(100%);
+  filter: saturate(100%);
+  cursor: pointer;
+  overflow: hidden;
+  direction: rtl;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.placePic img {
+  position: relative;
+  top: -50%;
+  width: 100%;
+  height: auto;
+}
+.otherPics {
+  direction: rtl;
+  position: absolute;
+  top: 11.5em;
+  right: 1em;
+  background-color: var(--main-back-color);
+  border-radius: 15px;
+  padding: 0.5em;
+}
+.otherPics i {
+  padding: 0.25em;
+}
+/*search panel*/
+.search-panel {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background-color: var(--main-back-color);
+  border-radius: 50px;
+  padding: 0.5em 1em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  width: 19em;
+  display: flex;
+  direction: rtl;
+  align-items: center;
+}
+
+#search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.25em;
+  background-color: var(--main-back-color);
+}
+
+#search-button i,
+#direction-close-button i {
+  background-color: var(--main-back-color);
+  border: none;
+  margin-right: 0.5em;
+  padding: 0.5em 0.5em;
+  cursor: pointer;
+}
+.nameContainer {
+  padding: 1em;
+  text-align: right;
+  background-color: var(--main-back-color);
+}
+.placeName {
+  font-size: large;
+}
+.altPlaceName {
+  font-size: small;
+}
+/**/
+.black-line {
+  background-color: rgb(222, 222, 222);
+  margin: 0.1em;
+  height: 0.1em; /* You can adjust the height to change the line thickness */
+}
+
+.quickButton {
+  display: flex; /* Display the divs in a row */
+  flex-direction: row-reverse;
+  justify-content: center; /* Center the divs horizontally */
+  align-items: flex-start; /* Align the buttons at the top of each div */
+  background-color: var(--main-back-color);
+  margin: 1em 0;
+}
+
+.quickButton > div {
+  margin: 0 10px; /* Add some spacing between each div */
+  text-align: center; /* Center the content inside each div horizontally */
+}
+
+.quickButton button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.quickButton i {
+  font-size: 24px; /* Adjust the icon size as needed */
+  background-color: rgb(0, 102, 244);
+  padding: 0.3em;
+  border-radius: 50px;
+  color: var(--main-back-color);
+}
+
+.quickButton span {
+  display: block; /* Make the span a block element */
+  margin-top: 5px; /* Add some spacing between the button and span */
+}
+.infoContainer {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: flex-end; /* Align children to the start of the container */
+  padding-top: 0.5em;
+}
+
+.infoSection {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: row-reverse;
+  transition: 300ms;
+}
+.infoSection:hover {
+  background-color: rgb(216, 216, 216);
+}
+
+/* Style the button in each section */
+.infoSection button,
+.infoSection a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.infoSection i {
+  padding: 0.5em 1em;
+  font-size: larger;
+  color: rgb(0, 102, 244);
+}
+
+.infoSection div {
+  padding: 0.5em;
+}
+
+.quickButton>div button{
+  cursor: pointer;
+}
+
+
+
+/*right panel person section*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.sidebar {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrollable-buttons {
+  white-space: nowrap;
+  padding-right: 16px;
+  cursor: grab;
+  user-drag: none;
+}
+
+.section-button {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.content {
+  float: left;
+  width: 80%;
+}
+
+.section {
+  display: none;
+}
