@@ -195,21 +195,21 @@ ul {
 .black-line {
   background-color: rgb(222, 222, 222);
   margin: 0.1em;
-  height: 0.1em; /* You can adjust the height to change the line thickness */
+  height: 0.1em;
 }
 
 .quickButton {
-  display: flex; /* Display the divs in a row */
+  display: flex;
   flex-direction: row-reverse;
-  justify-content: center; /* Center the divs horizontally */
-  align-items: flex-start; /* Align the buttons at the top of each div */
+  justify-content: center;
+  align-items: flex-start;
   background-color: var(--main-back-color);
   margin: 1em 0;
 }
 
 .quickButton > div {
-  margin: 0 10px; /* Add some spacing between each div */
-  text-align: center; /* Center the content inside each div horizontally */
+  margin: 0 10px; 
+  text-align: center;
 }
 
 .quickButton button {
@@ -219,7 +219,7 @@ ul {
 }
 
 .quickButton i {
-  font-size: 24px; /* Adjust the icon size as needed */
+  font-size: 24px; 
   background-color: rgb(0, 102, 244);
   padding: 0.3em;
   border-radius: 50px;
@@ -227,13 +227,13 @@ ul {
 }
 
 .quickButton span {
-  display: block; /* Make the span a block element */
-  margin-top: 5px; /* Add some spacing between the button and span */
+  display: block;
+  margin-top: 5px; 
 }
 .infoContainer {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: flex-end; /* Align children to the start of the container */
+  flex-direction: column;
+  align-items: flex-end;
   padding-top: 0.5em;
 }
 
@@ -247,7 +247,6 @@ ul {
   background-color: rgb(216, 216, 216);
 }
 
-/* Style the button in each section */
 .infoSection button,
 .infoSection a {
   text-decoration: none;
